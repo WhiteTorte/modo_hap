@@ -132,14 +132,6 @@ class _MemoPageState extends State<MemoPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('MEMO'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              showSearchDialog();
-            },
-          )
-        ],
       ),
       body: Column(
         children: [
@@ -199,6 +191,15 @@ class _MemoPageState extends State<MemoPage> {
                 ElevatedButton(
                   onPressed: _addMemo,
                   child: const Text('+'),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(50, 50),
+                    backgroundColor: Colors.pink,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: showSearchDialog,
+                  child: const Icon(Icons.search),
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(50, 50),
                     backgroundColor: Colors.pink,
